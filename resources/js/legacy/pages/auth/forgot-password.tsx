@@ -3,11 +3,11 @@ import { Head, useForm } from '@inertiajs/react';
 import { LoaderCircle } from 'lucide-react';
 import { FormEventHandler } from 'react';
 
-import InputError from '@/components/input-error';
-import TextLink from '@/components/text-link';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
+import InputError from '@/legacy/components/input-error';
+import TextLink from '@/legacy/components/text-link';
+import { Button } from '@/legacy/components/ui/button';
+import { Input } from '@/legacy/components/ui/input';
+import { Label } from '@/legacy/components/ui/label';
 import AuthLayout from '@/legacy/layouts/auth-layout';
 
 export default function ForgotPassword({ status }: { status?: string }) {

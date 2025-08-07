@@ -1,4 +1,4 @@
-import { PlaceholderPattern } from '@/components/ui/placeholder-pattern';
+import { PlaceholderPattern } from '@/legacy/components/ui/placeholder-pattern';
 import AppLayout from '@/legacy/layouts/app-layout';
 import { type BreadcrumbItem } from '@/types';
 import { Head } from '@inertiajs/react';

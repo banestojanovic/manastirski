@@ -1,4 +1,4 @@
-import InputError from '@/components/input-error';
+import InputError from '@/legacy/components/input-error';
 import AppLayout from '@/legacy/layouts/app-layout';
 import SettingsLayout from '@/legacy/layouts/settings/layout';
 import { type BreadcrumbItem } from '@/types';
@@ -6,10 +6,10 @@ import { Transition } from '@headlessui/react';
 import { Head, useForm } from '@inertiajs/react';
 import { FormEventHandler, useRef } from 'react';
 
-import HeadingSmall from '@/components/heading-small';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
+import HeadingSmall from '@/legacy/components/heading-small';
+import { Button } from '@/legacy/components/ui/button';
+import { Input } from '@/legacy/components/ui/input';
+import { Label } from '@/legacy/components/ui/label';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {

@@ -1,10 +1,10 @@
+import { wayfinder } from '@laravel/vite-plugin-wayfinder';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import laravel from 'laravel-vite-plugin';
+import path from 'path';
 import { defineConfig } from 'vite';
 import oxlintPlugin from 'vite-plugin-oxlint';
-import { wayfinder } from '@laravel/vite-plugin-wayfinder';
-import path from 'path';
 import run from 'vite-plugin-run';
 
 export default defineConfig({
@@ -16,9 +16,7 @@ export default defineConfig({
         }),
         react(),
         wayfinder(),
-        oxlintPlugin({
-            path: 'resources/js'
-        }),
+        oxlintPlugin(),
         tailwindcss(),
         run([
             {
@@ -30,7 +28,7 @@ export default defineConfig({
                 name: 'combine language files',
                 run: ['php', 'artisan', 'app:i18n'],
                 pattern: ['resources/lang/en.json'],
-            }
+            },
         ]),
     ],
     esbuild: {

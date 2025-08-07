@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Community;
+use App\Models\Diocese;
+use App\Models\Parish;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\Relation;
@@ -35,6 +38,9 @@ class AppServiceProvider extends ServiceProvider
         Model::unguard();
         Relation::enforceMorphMap([
             'user' => User::class,
+            'diocese' => Diocese::class,
+            'parish' => Parish::class,
+            'community' => Community::class,
         ]);
         Schema::defaultStringLength(125);
     }

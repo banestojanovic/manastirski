@@ -60,6 +60,18 @@ return [
             'report' => false,
         ],
 
+        'demo' => [
+            'prefix' => 'demo',
+            'driver' => 'scoped',
+            'disk' => 'public',
+        ],
+
+        \App\Support\Disk::DioceseImage => [
+            'prefix' => 'diocese/image',
+            'driver' => 'scoped',
+            'disk' => 'public',
+        ],
+
     ],
 
     /*

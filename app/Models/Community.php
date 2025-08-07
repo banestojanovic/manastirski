@@ -1,0 +1,27 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
+class Community extends Model
+{
+    /** @use HasFactory<\Database\Factories\CommunityFactory> */
+    use HasFactory, SoftDeletes;
+
+    protected $fillable = [
+        'name',
+        'slug',
+        'type',
+        'user_id',
+        'parish_id',
+        'description',
+        'other',
+    ];
+
+    protected $casts = [
+        'other' => 'array',
+    ];
+}
