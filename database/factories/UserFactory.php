@@ -35,8 +35,6 @@ class UserFactory extends Factory
 
     /**
      * Indicate that the model's role should be set to UserRole::SuperAdmin.
-     *
-     * @return static
      */
     public function admin(): static
     {

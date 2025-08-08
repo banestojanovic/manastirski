@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Support\Disk;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\MediaLibrary\HasMedia;
@@ -19,9 +20,6 @@ class Diocese extends Model implements HasMedia
     /** @use HasFactory<\Database\Factories\DioceseFactory> */
     use HasFactory;
 
-    /** @use SoftDeletes<\Illuminate\Database\Eloquent\SoftDeletes> */
-    use SoftDeletes;
-
     /** @use HasSlug<\App\Models\Diocese> */
     use HasSlug;
 
@@ -30,6 +28,9 @@ class Diocese extends Model implements HasMedia
 
     /** @use InteractsWithMedia<\App\Models\Diocese> */
     use InteractsWithMedia;
+
+    /** @use SoftDeletes<\Illuminate\Database\Eloquent\SoftDeletes> */
+    use SoftDeletes;
 
     protected $fillable = [
         'name',
@@ -57,5 +58,10 @@ class Diocese extends Model implements HasMedia
     public function image(): MorphOne
     {
         return $this->morphOne(Media::class, 'model')->where('collection_name', Disk::DioceseImage)->orderBy('order_column');
+    }
+
+    public function parish(): HasOne
+    {
+        return $this->hasOne(Parish::class);
     }
 }

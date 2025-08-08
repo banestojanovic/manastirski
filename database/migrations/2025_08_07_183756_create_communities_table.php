@@ -13,15 +13,15 @@ return new class extends Migration
     {
         Schema::create('communities', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->nullable()->constrained()->cascadeOnDelete();
+            $table->foreignId('parish_id')->nullable()->constrained()->cascadeOnDelete();
+            $table->json('name');
+            $table->string('slug')->index()->unique();
+            $table->integer('type')->default(1);
+            $table->json('description')->nullable();
+            $table->json('other')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
-    }
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('communities');
     }
 };

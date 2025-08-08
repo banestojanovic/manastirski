@@ -2,9 +2,7 @@
 
 namespace Database\Factories;
 
-use App\MediaType;
 use App\Models\Diocese;
-use App\Models\Listing;
 use App\Support\Disk;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
@@ -28,16 +26,21 @@ class DioceseFactory extends Factory
         ];
     }
 
+    /**
+     * Indicate that the diocese has an image.
+     *
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
     public function image(): DioceseFactory
     {
         return $this->afterCreating(function (Diocese $diocese) {
             $img = rand(1, 3);
 
             $diocese->addMediaFromDisk("diocese/$img.jpg", 'demo')
-                    ->preservingOriginal()
-                    ->withProperties(['uuid' => Str::uuid()])
-                    ->setOrder(1)
-                    ->toMediaCollection(Disk::DioceseImage, Disk::DioceseImage);
+                ->preservingOriginal()
+                ->withProperties(['uuid' => Str::uuid()])
+                ->setOrder(1)
+                ->toMediaCollection(Disk::DioceseImage, Disk::DioceseImage);
         });
     }
 }

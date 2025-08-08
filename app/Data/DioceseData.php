@@ -14,6 +14,5 @@ class DioceseData extends Data
         public ?string $description,
         public ?array $other,
         public ?Media $image
-    ) {
-    }
+    ) {}
 }

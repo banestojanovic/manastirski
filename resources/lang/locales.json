@@ -1,7 +1,19 @@
 {
     "en": {
         "translation": {
-            "welcome": "Welcome to our application!"
+            "welcome": "Welcome to our application!",
+            "nav": {
+                "home": "Home",
+                "dioceses": "Dioceses",
+                "parishes": "Parishes",
+                "communities": "Communities"
+            },
+            "nav_description": {
+                "home": "Return to the homepage",
+                "dioceses": "View all dioceses",
+                "parishes": "Explore parishes in your area",
+                "communities": "Discover local communities"
+            }
         }
     }
 }

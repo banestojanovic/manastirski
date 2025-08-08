@@ -13,15 +13,13 @@ return new class extends Migration
     {
         Schema::create('parishes', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('diocese_id')->nullable()->constrained()->cascadeOnDelete();
+            $table->json('name');
+            $table->string('slug')->index()->unique();
+            $table->json('description')->nullable();
+            $table->json('other')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
-    }
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('parishes');
     }
 };

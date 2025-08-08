@@ -72,6 +72,18 @@ return [
             'disk' => 'public',
         ],
 
+        \App\Support\Disk::ParishImage => [
+            'prefix' => 'parish/image',
+            'driver' => 'scoped',
+            'disk' => 'public',
+        ],
+
+        \App\Support\Disk::CommunityImage => [
+            'prefix' => 'community/image',
+            'driver' => 'scoped',
+            'disk' => 'public',
+        ],
+
     ],
 
     /*
